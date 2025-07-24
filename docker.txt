@@ -1,0 +1,21 @@
+CARA CREATE CONTAINER POSTGRES
+docker run --name postgres_container -e POSTGRES_PASSWORD=admin -p 6543:5432 postgres
+docker run --name container_name -e POSTGRES_PASSWORD=yourpassword -p hostport:containerport imagename
+
+
+CARA PULL IMAGE
+docker pull imagename:version
+
+CARA HAPUS CONTAINER
+docker container rm container_name
+
+CARA LIHAT ACTIVE CONTAINER
+docker ps
+
+CARA LIHAT SEMUA CONTAINER 
+docker ps -a
+
+CARA BIND VOLUME KE CONTAINER
+docker run --name postgres_container -e POSTGRES_PASSWORD=admin -p 6543:5432 -v postgres_volume:/var/lib/postgresql/data postgres
+
+CARA COMPOSE
