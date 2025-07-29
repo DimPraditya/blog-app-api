@@ -8,6 +8,7 @@ import { AuthRouter } from "./modules/auth/auth.router";
 import { BlogRouter } from "./modules/blog/blog.router";
 import { initializeScheduler } from "./scripts";
 import { TransactionRouter } from "./modules/transaction/transaction.router";
+import { initializeWorkers } from "./workers";
 
 export class App {
   app: Express;
@@ -17,6 +18,7 @@ export class App {
     this.routes();
     this.handleError();
     // initializeScheduler();
+    initializeWorkers();
   }
 
   private configure() {
