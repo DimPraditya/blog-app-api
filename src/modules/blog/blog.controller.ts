@@ -27,7 +27,7 @@ export class BlogController {
     const result = await this.blogService.createBlog(
       req.body,
       thumbnail,
-      res.locals.user.id
+      res.locals.user.id //authUserId
     );
 
     res.status(200).send(result);
