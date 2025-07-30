@@ -32,4 +32,10 @@ export class BlogController {
 
     res.status(200).send(result);
   };
+
+  getBlogBySlug = async (req: Request, res: Response) => {
+    const slug = req.params.slug;
+    const result = await this.blogService.getBlogBySlug(slug);
+    res.status(200).send(result);
+  };
 }
