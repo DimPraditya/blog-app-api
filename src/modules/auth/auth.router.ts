@@ -3,6 +3,7 @@ import { AuthController } from "./auth.controller";
 import { validateBody } from "../../middlewares/validation.middleware";
 import { RegisterDto } from "./dto/register.dto";
 import { LoginDto } from "./dto/login.dto";
+import { ForgotPasswordDto } from "./dto/forgot-password.dto";
 
 export class AuthRouter {
   private authController: AuthController;
@@ -23,6 +24,11 @@ export class AuthRouter {
       "/login",
       validateBody(LoginDto),
       this.authController.login
+    );
+    this.router.post(
+      "/forgot-password",
+      validateBody(ForgotPasswordDto),
+      this.authController.forgotPassword
     );
   };
 
