@@ -16,4 +16,9 @@ export class AuthController {
     const result = await this.authService.login(req.body);
     res.status(200).send(result);
   };
+
+  forgotPassword = async (req: Request, res: Response) => {
+    const result = await this.authService.forgotPassword(req.body);
+    res.status(200).send(result);
+  };
 }
