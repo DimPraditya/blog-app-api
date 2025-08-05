@@ -132,6 +132,6 @@ export class AuthService {
       data: { password: hashedPassword },
     });
 
-    return { message: "reset pasword success" };
+    return { message: "reset password success" };
   };
 }
